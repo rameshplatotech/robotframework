@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-03-30T18:31:32.442764" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login" source="/Users/rao9536/PycharmProjects/RobotAutomation/tests/ui/test_login.robot">
+<test id="s1-t1" name="Valid User Can Login" line="7">
+<kw name="Open Browser To Login Page" owner="ui_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-30T18:31:32.522822" level="INFO">Opening browser 'Chrome' to base url 'https://example.com/login'.</msg>
+<arg>${BASE_URL}/login</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-30T18:31:32.522700" elapsed="6.831518"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-30T18:31:39.354495" elapsed="0.357057"/>
+</kw>
+<status status="PASS" start="2026-03-30T18:31:32.522383" elapsed="7.189293"/>
+</kw>
+<kw name="Login With Credentials" owner="ui_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-30T18:31:39.712467" level="INFO">Typing text 'testuser' into text field 'id=username'.</msg>
+<msg time="2026-03-30T18:31:39.878326" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-30T18:31:39.878437" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-30T18:31:39.712155" elapsed="0.168256">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-30T18:31:39.880502" elapsed="0.000016"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=loginBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-30T18:31:39.880564" elapsed="0.000009"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logoutBtn</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-30T18:31:39.880606" elapsed="0.000007"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="FAIL" start="2026-03-30T18:31:39.711918" elapsed="0.168748">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=logoutBtn</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-03-30T18:31:39.880745" elapsed="0.000013"/>
+</kw>
+<kw name="Close Browser" owner="ui_keywords">
+<status status="NOT RUN" start="2026-03-30T18:31:39.880834" elapsed="0.000012"/>
+</kw>
+<status status="FAIL" start="2026-03-30T18:31:32.522108" elapsed="7.358825">Element with locator 'id=username' not found.</status>
+</test>
+<status status="FAIL" start="2026-03-30T18:31:32.443226" elapsed="7.437925"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Login" id="s1" pass="0" fail="1" skip="0">Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
