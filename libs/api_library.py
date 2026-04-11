@@ -4,9 +4,14 @@ class ApiLibrary:
     def __init__(self, base_url):
         self.base_url = base_url
 
-    def login(self, username, password):
-        url = f"{self.base_url}/auth/login"
-        payload = {"username": username, "password": password}
-        response = requests.post(url, json=payload)
+    def get(self, endpoint, **kwargs):
+        url = f"{self.base_url}{endpoint}"
+        response = requests.get(url, **kwargs)
         response.raise_for_status()
-        return response.json().get("token")
+        return response
+
+    def post(self, endpoint, payload=None, **kwargs):
+        url = f"{self.base_url}{endpoint}"
+        response = requests.post(url, json=payload, **kwargs)
+        response.raise_for_status()
+        return response

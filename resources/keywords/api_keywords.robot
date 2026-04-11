@@ -1,16 +1,20 @@
 *** Settings ***
 Library    Collections
 Library    RequestsLibrary
-
-*** Variables ***
-${LOGIN_ENDPOINT}    /auth/login
+Resource    ../variables/variables.robot
 
 *** Keywords ***
-Login Via API
-    [Arguments]    ${username}    ${password}
-    Create Session    api    ${API_BASE_URL}
-    ${payload}=    Create Dictionary    username=${username}    password=${password}
-    ${response}=    Post Request    api    ${LOGIN_ENDPOINT}    json=${payload}
-    Should Be Equal As Integers    ${response.status_code}    200
-    ${token}=    Get From Dictionary    ${response.json()}    token
-    [Return]    ${token}
+Create API Session
+    [Arguments]    ${alias}=api    ${base_url}=${API_BASE_URL}
+    Create Session    ${alias}    ${base_url}
+
+Send GET Request
+    [Arguments]    ${endpoint}    ${expected_status}=any    ${alias}=api
+    ${response}=    GET On Session    ${alias}    ${endpoint}    expected_status=${expected_status}
+    RETURN    ${response}
+
+Send POST Request
+    [Arguments]    ${endpoint}    ${payload}    ${expected_status}=any    ${alias}=api
+    ${response}=    POST On Session    ${alias}    ${endpoint}    json=${payload}    expected_status=${expected_status}
+    RETURN    ${response}
+

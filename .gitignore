@@ -1,0 +1,23 @@
+# Robot Framework generated outputs
+output.xml
+log.html
+report.html
+xunit.xml
+log-*.html
+report-*.html
+output-*.xml
+selenium-screenshot-*.png
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# IDE metadata
+.idea/
+
+# Local environment files
+.env
+
