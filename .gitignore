@@ -7,6 +7,7 @@ log-*.html
 report-*.html
 output-*.xml
 selenium-screenshot-*.png
+artifacts/
 
 # Python cache and virtual environments
 __pycache__/
@@ -20,4 +21,3 @@ env/
 
 # Local environment files
 .env
-
